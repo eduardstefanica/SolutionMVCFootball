@@ -1,0 +1,76 @@
+﻿@model IEnumerable<WebAppMVCFootball.Models.TCampionato>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiare il colore di una div con CSS</title>
+    <style>
+        .row {
+            color: white;
+        }
+
+        /* body {
+            background-image: url('https://wallpapercave.com/wp/wp9087810.jpg'); /* Sostituisci 'URL_COMPLETO_DELL_IMMAGINE' con il link diretto all'immagine su Google Immagini */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Facoltativo: rende lo sfondo fisso durante lo scrolling */
+        } */
+
+    </style>
+</head>
+<body>
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Paese)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeFederazione)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsTopRanking)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Paese)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeFederazione)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsTopRanking)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

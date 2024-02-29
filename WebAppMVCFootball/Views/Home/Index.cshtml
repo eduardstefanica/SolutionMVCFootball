@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@* <div class="text-center">
+    <h1 class="display-4">Eduard Stefanica</h1>
+    
+</div> *@
+
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Cambiare il colore di una div con CSS</title>
+            <style>
+            .row {
+                color: navy; 
+            }
+            body {
+            background-image: url('https://wallpaperaccess.com/full/1348812.jpg'); /* Sostituisci 'URL_COMPLETO_DELL_IMMAGINE' con il link diretto all'immagine su Google Immagini */
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed; /* Facoltativo: rende lo sfondo fisso durante lo scrolling */
+            }
+
+            
+            </style>
+        </head>
+<body>
+    
+    @* <div class="text-center">
+    <h1 class="display-4">Eduard Stefanica WebAppFootball </h1><br />
+    </div> *@
+    
+    <div class="row">
+        <center>
+            <div class="col-sm-6 mb-3 mb-sm-0"> 
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Eduard Stefanica WebAppFootball </h1>
+                    </div>
+                </div>
+        </center>
+    </div>
+    <br />
+    
+
+    <div class="row"><center>
+        <div class="col-sm-3 mb-1 mb-sm-0">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Campionato</h5>
+                        <h6 class="card-body">Lista dei Campionati</h6>
+                    <a class="btn btn-primary" asp-area="" asp-controller="campionato" asp-action="Index">Campionato</a></a>
+                </div>
+            </div></center>
+        </div>
+        <br />
+    <div class="row" >
+        <center>
+            <div class="col-sm-3 mb-1 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Squadra</h5>
+                            <h6 class="card-body">Lista delle Squadre</h6>
+                        <a class="btn btn-primary" asp-area="" asp-controller="Squadra" asp-action="Index">Squadra</a></a>
+                    </div>
+                </div>
+        </center>
+    </div>
+    <br />
+    <div class="row">
+        <center>
+            <div class="col-sm-3 mb-1 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Giocatore</h5>
+                            <h6 class="card-body">Lista dei Giocatori</h6>
+                        <a class="btn btn-primary" asp-area="" asp-controller="Giocatore" asp-action="Index">Giocatore</a></a>
+                    </div>
+                </div>
+        </center>
+    </div>
+  </div> <!-- div chiusura pagina e collegamento sql-->
+
+  
+</body>
+</html>
