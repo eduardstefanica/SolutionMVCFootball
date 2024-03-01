@@ -10,67 +10,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cambiare il colore di una div con CSS</title>
-    <style>
-        .row {
-            color: white;
-        }
-
-        body {
-            background-image: url('https://wallpapercave.com/wp/wp9087810.jpg'); /* Sostituisci 'URL_COMPLETO_DELL_IMMAGINE' con il link diretto all'immagine su Google Immagini */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed; /* Facoltativo: rende lo sfondo fisso durante lo scrolling */
-        }
-
-    </style>
-</head>
+        <style>
+                /* Stile per la riga della tabella */
+                .table tbody tr {
+                    background-color: #fff; 
+                    color: #333; 
+                }
+                /* Stile per l'header della tabella */
+                .table thead th {
+                    background-color: #007bff; 
+                    color: white; 
+                }
+                /* Stile per i link */
+                a {
+                    color: #007bff;
+                }
+                /* Stile per l'elemento h1 */
+                h1 {
+                    color: #fff;
+                    text-align: center; 
+                }
+                 /* Stile per la riga della tabella */
+                .table tbody tr {
+                    background-color: #fff !important; /
+                    color: #333; 
+                }
+                /* Stile per la tabella */
+                .table {
+                    border-radius: 10px; 
+                    overflow: hidden;
+                }
+                /* Stile per l'intera pagina */
+                body {
+                    background-image: url('https://wallpapercave.com/wp/wp9087810.jpg');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    font-family: Arial, sans-serif; 
+                }
+                /*stile del create new (paragrafo ed a)*/ 
+                p a {
+                    color: #fff; 
+                    background-color: #007bff; 
+                    padding: 5px 10px; 
+                    border-radius: 5px; 
+                    text-decoration: none; 
+                }
+        </style>
+    </head>
 <body>
-<h1>Index</h1>
+    <h1>Index Tabella Campionato</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Paese)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NomeFederazione)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsTopRanking)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Paese)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomeFederazione)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsTopRanking)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+        }
+            </tbody>
+        </table>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Paese)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NomeFederazione)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsTopRanking)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Paese)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeFederazione)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsTopRanking)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+    <center><p> <a asp-action="Create">Create New</a> </p></center>
 </body>
 </html>
