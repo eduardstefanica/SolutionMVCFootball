@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [Football]
+    WITH PASSWORD = N'sd7npzdFlViko8acbuakrWprmsFT7_&#$!~<vd|GahJpvgjn', SID = 0x8FBFFF8633D11A4C86C05FE464F9698E, DEFAULT_LANGUAGE = [Italiano], CHECK_EXPIRATION = ON;
+
