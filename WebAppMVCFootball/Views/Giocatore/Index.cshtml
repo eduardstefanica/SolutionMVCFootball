@@ -4,12 +4,61 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Stile per la riga della tabella */
+        .table tbody tr {
+            background-color: #fff;
+            color: #333;
+        }
+        /* Stile per l'header della tabella */
+        .table thead th {
+            background-color: black;
+            color: white;
+        }
+        /* Stile per i link */
+        a {
+            color: #228B22;
+        }
+        /* Stile per l'elemento h1 */
+        h1 {
+            color: #fff;
+            text-align: center;
+        }
+        /* Stile per la riga della tabella */
+        .table tbody tr {
+            background-color: #fff !important;
+            / color: #333;
+        }
+        /* Stile per la tabella */
+        .table {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        /* Stile per l'intera pagina */
+        body {
+            background-image: url('https://wallpapercave.com/wp/wp9198694.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+        /*stile del create new (paragrafo ed a)*/
+        p a {
+            color: #fff;
+            background-color: #228B22;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
 <h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -52,3 +101,11 @@
 }
     </tbody>
 </table>
+    <center>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    </center>
+
+</body>
+</html>

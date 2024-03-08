@@ -4,12 +4,54 @@
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<html>
+<head>
+    <style>
+        /* Stile per la riga della tabella */
+        .table tbody tr {
+            background-color: #fff;
+            color: #FFF;
+        }
 
-<h1>Edit</h1>
+        h1 {
+            color: White;
+            text-align: center;
+        }
+        /* Stile per la riga della tabella */
+        .table tbody tr {
+            background-color: #fff !important;
+            color: #fff;
+        }
+        /* Stile per la tabella */
+        .table {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        /* Stile per l'intera pagina */
+        body {
+            background-image: url('https://images2.alphacoders.com/133/1335727.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+        /*stile del create new*/
+        a {
+            color: #fff;
+            /* background-color: #007bff; */
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<br />
 
-<h4>TGiocatore</h4>
-<hr />
-<div class="row">
+<body>
+    <center>
+<h1>Edit Giocatore</h1>
+
+<div class="row"><center>
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -33,18 +75,25 @@
                 <label asp-for="Nazionalita" class="control-label"></label>
                 <input asp-for="Nazionalita" class="form-control" />
                 <span asp-validation-for="Nazionalita" class="text-danger"></span>
+            </div><br />
+            @* bottoni *@
+            <div style="display: flex; justify-content: space-between;">
+            <div>
+                <a asp-action="Index" class="btn btn-success">Back to List</a>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
             </div>
         </form>
     </div>
+    </center>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
+</center>
+</body>
+</html>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

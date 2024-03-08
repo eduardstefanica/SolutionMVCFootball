@@ -4,44 +4,72 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<html>
+<head>
+    <style>
+        h1 {
+            color: White;
+            text-align: center;
+        }
 
-<h1>Create</h1>
+        body {
+            background-image: url('https://wallpapercave.com/wp/wp2314828.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
 
-<h4>TGiocatore</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Eta" class="control-label"></label>
-                <input asp-for="Eta" class="form-control" />
-                <span asp-validation-for="Eta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdSquadra" class="control-label"></label>
-                <select asp-for="IdSquadra" class ="form-control" asp-items="ViewBag.IdSquadra"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Nazionalita" class="control-label"></label>
-                <input asp-for="Nazionalita" class="form-control" />
-                <span asp-validation-for="Nazionalita" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+<body>
+    <center>
+        <h1>Create</h1>
+
+        <div class="row">
+            <center>
+                <div class="col-md-4">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Nome" class="control-label"></label>
+                            <input asp-for="Nome" class="form-control" />
+                            <span asp-validation-for="Nome" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Eta" class="control-label"></label>
+                            <input asp-for="Eta" class="form-control" />
+                            <span asp-validation-for="Eta" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="IdSquadra" class="control-label"></label>
+                            <select asp-for="IdSquadra" class="form-control" asp-items="ViewBag.IdSquadra"></select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Nazionalita" class="control-label"></label>
+                            <input asp-for="Nazionalita" class="form-control" />
+                            <span asp-validation-for="Nazionalita" class="text-danger"></span>
+                        </div>
+                        <br />
+                        @* bottoni *@
+                        <div style="display: flex; justify-content: space-between;">
+                            <div>
+                                <a asp-action="Index" class="btn btn-success">Back to List</a>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-success" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </center>
+        </div>
+        <br />
+
+    </center>
+</body>
+</html>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
