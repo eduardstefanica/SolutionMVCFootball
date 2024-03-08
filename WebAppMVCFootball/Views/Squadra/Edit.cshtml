@@ -4,12 +4,54 @@
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<html>
+<head>
+    <style>
+        /* Stile per la riga della tabella */
+        .table tbody tr {
+            background-color: #fff;
+            color: #FFF;
+        }
 
-<h1>Edit</h1>
+        h1 {
+            color: black;
+            text-align: center;
+        }
+        /* Stile per la riga della tabella */
+        .table tbody tr {
+            background-color: #fff !important;
+            color: #fff;
+        }
+        /* Stile per la tabella */
+        .table {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        /* Stile per l'intera pagina */
+        body {
+            background-image: url('https://wallpapercave.com/wp/wp3086042.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+        /*stile del create new*/
+        a {
+            color: #fff;
+            /* background-color: #007bff; */
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<br />
 
-<h4>TSquadra</h4>
+<body>
+    <center>
+<h1>Edit Squadra</h1>
 <hr />
-<div class="row">
+<div class="row"><center>
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -28,17 +70,23 @@
                 <label asp-for="AnnoFondazione" class="control-label"></label>
                 <input asp-for="AnnoFondazione" class="form-control" />
                 <span asp-validation-for="AnnoFondazione" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
+            </div><br />
+             @* bottoni *@
+             <div style="display: flex; justify-content: space-between;">
+             <div>
+                <a asp-action="Index" class="btn btn-success">Back to List</a>
+             </div>
+             <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" />
+             </div>
+             </div>
         </form>
     </div>
+   </center>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+</center>
+</body>
+</html>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
