@@ -4,43 +4,115 @@
     ViewData["Title"] = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<html>
+<head>
+    <style>
+        /* Stile per la riga della tabella */
+        .table tbody tr {
+            background-color: #fff;
+            color: #333;
+        }
+        /* Stile per l'header della tabella */
+        .table thead th {
+            background-color: black;
+            color: white;
+        }
+        /* Stile per i link */
+        a {
+            color: #228B22;
+        }
+        /* Stile per l'elemento h1 */
+        h1 {
+            color: #fff;
+            text-align: center;
+        }
+        /* Stile per la tabella */
+        .table {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        /* Stile per l'intera pagina */
+        body {
+            background-image: url('https://wallpapercave.com/wp/wp9119097.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+        
+    </style>
+</head>
+<br />
+<body>
+    <center>
 <h1>Delete</h1>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>TCampionato</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Paese)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Paese)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NomeFederazione)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NomeFederazione)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IsTopRanking)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IsTopRanking)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
-</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Nome)
+                    </dt>
+                </th>
+                <th>
+                    <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Paese)
+                    </dt>
+                </th>
+                <th>
+                    <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.NomeFederazione)
+                    </dt>
+                </th>
+                <th>
+                    <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.IsTopRanking)
+                    </dt>
+                </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Nome)
+                    </dd>
+                </td>
+                <td>
+                    <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Paese)
+                    </dd>
+                </td>
+                <td>
+                    <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.NomeFederazione)
+                    </dd>
+                </td>
+                <td>
+                    <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.IsTopRanking)
+                    </dd>
+                </td>
+                </tr>
+        </tbody>
+        <br />
+    </table>
+
+            @* bottoni *@
+            <div style="display: flex; justify-content: space-between;">
+                <div>
+                    <a asp-action="Index" class="btn btn-success">Back to List</a>
+                </div>
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="submit" value="Delete" class="btn btn-success" />
+                </form>
+            </div>
+           
+    </div> 
+    </center>
+</body>
+</html>

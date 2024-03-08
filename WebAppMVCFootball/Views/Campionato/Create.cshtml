@@ -4,46 +4,73 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<html>
+<head>
+    <style>
+        h1 {
+            color: black;
+            text-align: center;
+        }
+        body {
+            background-image: url('https://wallpaperset.com/w/full/d/4/3/24270.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<br />
 
+<body>
+    <center>
 <h1>Create</h1>
 
 <h4>TCampionato</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Paese" class="control-label"></label>
-                <input asp-for="Paese" class="form-control" />
-                <span asp-validation-for="Paese" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NomeFederazione" class="control-label"></label>
-                <input asp-for="NomeFederazione" class="form-control" />
-                <span asp-validation-for="NomeFederazione" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IsTopRanking" class="control-label"></label>
-                <input asp-for="IsTopRanking" class="form-control" />
-                <span asp-validation-for="IsTopRanking" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+    <div class="row"><center>
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Nome" class="control-label"></label>
+                    <input asp-for="Nome" class="form-control" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Paese" class="control-label"></label>
+                    <input asp-for="Paese" class="form-control" />
+                    <span asp-validation-for="Paese" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NomeFederazione" class="control-label"></label>
+                    <input asp-for="NomeFederazione" class="form-control" />
+                    <span asp-validation-for="NomeFederazione" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IsTopRanking" class="control-label"></label>
+                    <input asp-for="IsTopRanking" class="form-control" />
+                    <span asp-validation-for="IsTopRanking" class="text-danger"></span>
+                </div>
+                <br />
+                 @* bottoni *@
+                 <div style="display: flex; justify-content: space-between;">
+                     <div>
+                         <a asp-action="Index" class="btn btn-success">Back to List</a>
+                           </div>
+                     <div class="form-group">
+                         <input type="submit" value="Create" class="btn btn-success" />
+                     </div>
+                 </div>
+            </form>
+        </div>
+        </center>
     </div>
-</div>
+    <br />
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
+</center>
+</body>
+</html>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
