@@ -6,7 +6,7 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Cambiare il colore di una div con CSS</title>
+            @* <title>Cambiare il colore di una div con CSS</title> *@
             <style>
             .container {
                 display: flex;
@@ -68,20 +68,88 @@
             .card:active {
                 transform: scale(0.95) rotateZ(1.7deg);
             }
+            /*stile button*/
+        .button {
+            padding: 12px 24px; /* Aumenta leggermente il padding */
+            font-size: 16px; /* Aumenta leggermente il font-size */
+        }
+
+        /* Rimuovi il sottolineato */
+        .button {
+            text-decoration: none;
+        }
+
+        /* Aggiorna anche gli altri stili del bottone */
+        .button {
+            display: inline-block;
+            background: linear-gradient(45deg, #00b5ff, #005eff);
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+            .button::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.1);
+                transform: translateY(100%) rotateX(90deg);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .button:hover::before {
+                transform: translateY(0) rotateX(0);
+            }
+
+            .button::after {
+                content: "";
+                position: absolute;
+                top: -5px;
+                left: -5px;
+                width: calc(100% + 10px);
+                height: calc(100% + 10px);
+                border-radius: 15px;
+                border: 1px solid #00b5ff;
+                z-index: -1;
+            }
+
+            /* Hover Effect */
+            .button:hover {
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                transform: scale(1.05);
+            }
+
+            /* Active Effect */
+            .button:active {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                transform: scale(0.95);
+            }
+
             </style>
         </head>
+
     <h1>Eduard Stefanica WebAppFootball </h1>
     <body>
         
     <br />
     <div class="container">
         <div class="row">
+
             <div class="col-sm-4 mb-1 mb-sm-0">
                 <div class="card d-flex align-items-stretch">
                     <div class="card-body text-center">
                         <h5 class="card-title">Campionato</h5>
-                        <h6 class="card-body">Lista dei Campionati</h6>
-                        <a class="btn btn-outline-danger" asp-area="" asp-controller="campionato" asp-action="Index">Campionato</a>
+                        <h6 class="card-body">Lista dei Campionati</h6><br />
+                        <a class="button" asp-area="" asp-controller="campionato" asp-action="Index" style="text-decoration: none;">Campionato</a>
                     </div>
                 </div>
             </div>
@@ -90,8 +158,8 @@
                 <div class="card d-flex align-items-stretch">
                     <div class="card-body text-center">
                         <h5 class="card-title">Squadra</h5>
-                        <h6 class="card-body">Lista delle Squadre</h6>
-                        <a class="btn btn-outline-danger" asp-area="" asp-controller="Squadra" asp-action="Index">Squadra</a>
+                        <h6 class="card-body">Lista delle Squadre</h6><br />
+                        <a class="button" asp-area="" asp-controller="Squadra" asp-action="Index">Squadra</a>
                     </div>
                 </div>
             </div>
@@ -100,11 +168,12 @@
                 <div class="card d-flex align-items-stretch">
                     <div class="card-body text-center">
                         <h5 class="card-title">Giocatore</h5>
-                        <h6 class="card-body">Lista dei Giocatori</h6>
-                        <a class="btn btn-outline-danger" asp-area="" asp-controller="Giocatore" asp-action="Index">Giocatore</a>
+                        <h6 class="card-body">Lista dei Giocatori</h6><br />
+                        <a class="button" asp-area="" asp-controller="Giocatore" asp-action="Index">Giocatore</a>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
