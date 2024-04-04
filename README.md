@@ -1,1 +1,2 @@
-SI PREFERISCE USARE MICROSOFT EDGE
+-SI PREFERISCE USARE MICROSOFT EDGE
+-andare sul SMSS e creare un utente Football con una rispettiva pw e modificare la stringa di connessione sul VS
